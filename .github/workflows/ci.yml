@@ -19,7 +19,9 @@ jobs:
           needs: check
       - name: Tests
         shell: bash
-        run: Rscript -e 'testthat::test_local(reporter = testthat::CheckReporter$new())'
+        run: |
+          Rscript -e 'testthat::test_local(reporter = testthat::CheckReporter$new())'
       - name: Lint
         shell: bash
-        run: Rscript -e 'l <- lintr::lint_package(); for (x in l) cat(sprintf("%s:%d:%d: %s: [%s] %s\n", x$filename, x$line_number, x$column_number, x$type, x$linter, x$message), sep = ""); quit(status = as.integer(length(l) > 0))'
+        run: |
+          Rscript -e 'l <- lintr::lint_package(); for (x in l) cat(sprintf("%s:%d:%d: %s: [%s] %s\n", x$filename, x$line_number, x$column_number, x$type, x$linter, x$message), sep = ""); quit(status = as.integer(length(l) > 0))'
