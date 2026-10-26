@@ -1,0 +1,11 @@
+Package: xmlvet
+Type: Package
+Title: Check, Canonicalize and Query XML Files
+Version: 0.1.0
+Description: A command-line tool that checks XML files for well-formedness,
+    writes their canonical form, lists their element paths, selects values with
+    a small path language and compares two documents.
+License: file LICENSE
+Encoding: UTF-8
+Suggests: testthat (>= 3.0.0)
+Config/testthat/edition: 3

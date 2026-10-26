@@ -1,0 +1,8 @@
+*.db
+.Rproj.user/
+.Rhistory
+.RData
+*.Rcheck/
+*.tar.gz
+tests/testthat/_problems/
+tests/testthat/testthat-problems.rds
