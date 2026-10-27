@@ -35,6 +35,11 @@ usage: xmlvet check [--quiet] FILE...
        xmlvet diff [--ignore-space] FILE FILE
 ```
 
+`xmlvet --version` prints the version from the `Version` field of the
+`DESCRIPTION` file, for example `xmlvet 0.2.0`, and exits with status 0; it
+exits with status 2 and an error message when that file cannot be read or has no
+valid `Version` field.
+
 Exit status is 0 for success, 1 when `check` finds a problem, `get` selects no
 values, or `diff` finds a difference, and 2 for an error.
 
