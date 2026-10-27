@@ -34,6 +34,9 @@ read_bytes <- function(path) {
 io <- list(
   read_stdin = function() read_bytes("stdin"),
   read_file = function(path) read_bytes(path),
+  read_description = function() {
+    read_bytes(file.path(project_dir, "DESCRIPTION"))
+  },
   out = function(text) {
     writeLines(text, stdout(), sep = "", useBytes = TRUE)
   },

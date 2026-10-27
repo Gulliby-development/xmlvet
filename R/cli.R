@@ -12,6 +12,8 @@ main <- function(argv, io) {
   if (identical(argv, "--help")) {
     io$out(usage_text())
     code <- 0L
+  } else if (identical(argv, "--version")) {
+    code <- run_version(io)
   } else {
     result <- tryCatch(
       {
