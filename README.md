@@ -31,7 +31,7 @@ shell.
 usage: xmlvet check [--quiet] FILE...
        xmlvet canon [--comments] FILE
        xmlvet outline [--depth N] FILE
-       xmlvet get PATH FILE
+       xmlvet get [--count] PATH FILE
        xmlvet diff [--ignore-space] FILE FILE
 ```
 
@@ -41,7 +41,8 @@ exits with status 2 and an error message when that file cannot be read or has no
 valid `Version` field.
 
 Exit status is 0 for success, 1 when `check` finds a problem, `get` selects no
-values, or `diff` finds a difference, and 2 for an error.
+values (`get --count` then prints `0`), or `diff` finds a difference, and 2 for
+an error.
 
 ## Worked examples
 
@@ -98,6 +99,17 @@ xmlvet get //book/@id catalog.xml
 ```text
 b2
 b1
+```
+
+Count the selected values instead of printing them (exit status 0, or 1 when
+there are none):
+
+```sh
+xmlvet get --count //book/@id catalog.xml
+```
+
+```text
+2
 ```
 
 Compare documents (exit status 1):

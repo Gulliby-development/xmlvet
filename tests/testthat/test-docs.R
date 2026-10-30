@@ -35,7 +35,7 @@ test_that("README explains purpose, installation, usage, and status codes", {
         "usage: xmlvet check [--quiet] FILE...\n",
         "       xmlvet canon [--comments] FILE\n",
         "       xmlvet outline [--depth N] FILE\n",
-        "       xmlvet get PATH FILE\n",
+        "       xmlvet get [--count] PATH FILE\n",
         "       xmlvet diff [--ignore-space] FILE FILE"
       ),
       readme,
@@ -46,7 +46,8 @@ test_that("README explains purpose, installation, usage, and status codes", {
     grepl(
       paste0(
         "Exit status is 0 for success, 1 when `check` finds a problem, `get` ",
-        "selects no\nvalues, or `diff` finds a difference, and 2 for an error."
+        "selects no\nvalues (`get --count` then prints `0`), or `diff` finds ",
+        "a difference, and 2 for\nan error."
       ),
       readme,
       fixed = TRUE

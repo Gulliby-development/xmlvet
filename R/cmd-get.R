@@ -41,7 +41,12 @@ run_get <- function(args, flags, settings, inputs) {
   }
 
   values <- evaluate_path(parsed$doc$root, steps)
-  if (length(values) == 0L) {
+  if ("--count" %in% flags) {
+    list(
+      out = paste0(length(values), "\n"),
+      code = if (length(values) == 0L) 1 else 0
+    )
+  } else if (length(values) == 0L) {
     list(out = "", code = 1)
   } else {
     rendered <- vapply(values, show_value, character(1))
