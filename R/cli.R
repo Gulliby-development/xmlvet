@@ -3,7 +3,7 @@ usage_text <- function() {
     "usage: xmlvet check [--quiet] FILE...\n",
     "       xmlvet canon [--comments] FILE\n",
     "       xmlvet outline [--depth N] FILE\n",
-    "       xmlvet get PATH FILE\n",
+    "       xmlvet get [--count] PATH FILE\n",
     "       xmlvet diff [--ignore-space] FILE FILE\n"
   )
 }
@@ -30,6 +30,7 @@ main <- function(argv, io) {
         flags <- switch(command,
           check = "--quiet",
           canon = "--comments",
+          get = "--count",
           diff = "--ignore-space",
           character()
         )

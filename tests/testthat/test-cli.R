@@ -3,7 +3,7 @@ test_that("main handles help and command diagnostics", {
     "usage: xmlvet check [--quiet] FILE...\n",
     "       xmlvet canon [--comments] FILE\n",
     "       xmlvet outline [--depth N] FILE\n",
-    "       xmlvet get PATH FILE\n",
+    "       xmlvet get [--count] PATH FILE\n",
     "       xmlvet diff [--ignore-space] FILE FILE\n"
   )
   expect_identical(usage_text(), expected_usage)
